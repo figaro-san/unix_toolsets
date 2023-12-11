@@ -12,6 +12,7 @@ cd $1
 if [ "$2" != "0" ]; then
         for chapter_num in $(seq 0 $(($2-1))); do
                 mkdir chapter_$((chapter_num+1))
+                mkdir ./chapter_$((chapter_num+1))/code
                 touch ./chapter_$((chapter_num+1))/chapter_$((chapter_num+1))
         done
 fi
