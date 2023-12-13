@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$#" != "2" ]; then
+if [ "$#" != "4" ]; then
         echo "usage:"
         echo "          [+] mklib <book_title> <chapter_num>"
         exit 0
@@ -12,7 +12,13 @@ cd $1
 if [ "$2" != "0" ]; then
         for chapter_num in $(seq 0 $(($2-1))); do
                 mkdir chapter_$((chapter_num+1))
-                mkdir ./chapter_$((chapter_num+1))/code
-                touch ./chapter_$((chapter_num+1))/chapter_$((chapter_num+1))
+
+                if [ "$3" = "t" ]; then
+                        mkdir ./chapter_$((chapter_num+1))/code
+                fi
+
+                if [ "$4" = "t" ]; then
+                        touch ./chapter_$((chapter_num+1))/chapter_$((chapter_num+1))
+                fi
         done
 fi
