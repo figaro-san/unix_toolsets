@@ -2,7 +2,7 @@
 
 if [ "$#" != "4" ]; then
         echo "usage:"
-        echo "          [+] mklib <book_title> <chapter_num>"
+        echo "          [+] mknt <book_title> <chapter_num> <make code dir? t or f> <make memo? t or f>"
         exit 0
 fi
 
