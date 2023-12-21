@@ -1,0 +1,23 @@
+#!/bin/sh
+
+edt() {
+	case "$1" in
+		astro)
+			nvim ~/.config/nvim/lua/user/
+			;;
+
+		i3)
+			nvim ~/.config/i3/config
+			;;
+		bashrc)
+			nvim ~/.bashrc
+			;;
+		picom)
+			nvim ~/.config/picom/picom.conf
+			;;
+		*)
+			echo "edt: unknown keyword '$1'"
+	esac
+}
+
+complete -W "astro i3 bashrc picom" edt
