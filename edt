@@ -1,19 +1,20 @@
 #!/bin/sh
 
+EDITOR="nvim"
 edt() {
 	case "$1" in
 		astro)
-			nvim ~/.config/nvim/lua/user/
+			$EDITOR ~/.config/EDITOR/lua/user/
 			;;
 
 		i3)
-			nvim ~/.config/i3/config
+			$EDITOR ~/.config/i3/config
 			;;
 		bashrc)
-			nvim ~/.bashrc
+			$EDITOR ~/.bashrc
 			;;
 		picom)
-			nvim ~/.config/picom/picom.conf
+			$EDITOR ~/.config/picom/picom.conf
 			;;
 		*)
 			echo "edt: unknown keyword '$1'"
