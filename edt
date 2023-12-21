@@ -4,7 +4,7 @@ EDITOR="nvim"
 edt() {
 	case "$1" in
 		astro)
-			$EDITOR ~/.config/EDITOR/lua/user/
+			$EDITOR ~/.config/nvim//lua/user/
 			;;
 
 		i3)
