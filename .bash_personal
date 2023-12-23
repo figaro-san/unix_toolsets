@@ -1,0 +1,61 @@
+# ~/.bash_personal
+# .bashrcに書いていた内容を別ファイルとして切り出し、移植性を高めた?
+
+# .bashrcに以下を追加する
+# [[ -f ~/path/to/.bash_personal ]] && . ~/path/to/.bash_personal
+
+
+. "$HOME/.cargo/env"
+[ -n "$DISPLAY" ] && export BROWSER=brave || export BROWSER=links
+
+# add unix_toolsets to PATH
+export PATH=$PATH:$HOME/Projects/Git_workspace/unix_toolsets
+
+# add some path to CDPATH
+export CDPATH=$HOME:$HOME/Projects/:$HOME/Projects/Git_workspace/:$HOME/Projects/Bookshelf/
+
+# alias settings
+alias up='cd ../'
+alias down='sudo shutdown -h now'
+alias c='clear'
+alias suspend='systemctl suspend'
+alias hibernate='systemctl hibernate'
+alias e='eza -1'
+alias dirs='dirs -v' #番号をつけて、かつ列で表示
+alias slurp='pushd - && pushd' #pushdではなくcdしてしまったとき、slurpで読み込み直す
+
+# setting for fuck command
+eval $(thefuck --alias)
+
+# setting for zoxide command
+eval "$(zoxide init bash)"
+
+# setting for sheloption
+set -o vi
+
+# welcome message
+echo "Welcome to Linux, friend!"
+
+# edt
+EDITOR="nvim"
+edt() {
+	case "$1" in
+		astro)
+			$EDITOR ~/.config/nvim//lua/user/
+			;;
+
+		i3)
+			$EDITOR ~/.config/i3/config
+			;;
+		bashrc)
+			$EDITOR ~/.bashrc
+			;;
+		picom)
+			$EDITOR ~/.config/picom/picom.conf
+			;;
+		*)
+			echo "edt: unknown keyword '$1'"
+	esac
+}
+
+complete -W "astro i3 bashrc picom" edt
