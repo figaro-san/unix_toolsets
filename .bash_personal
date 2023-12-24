@@ -53,9 +53,12 @@ edt() {
 		picom)
 			$EDITOR ~/.config/picom/picom.conf
 			;;
+		bash_personal)
+			$EDITOR ~/Projects/Git_workspace/unix_toolsets/.bash_personal
+			;;
 		*)
 			echo "edt: unknown keyword '$1'"
 	esac
 }
 
-complete -W "astro i3 bashrc picom" edt
+complete -W "astro i3 bashrc picom bash_personal" edt
