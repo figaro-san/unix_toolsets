@@ -62,3 +62,7 @@ edt() {
 }
 
 complete -W "astro i3 bashrc picom bash_personal" edt
+
+# modify bash pronpt
+# export PS1="[\u@\h \W]\$ "
+# export PS1="[<\u> <\t> \W]\$ "
