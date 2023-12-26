@@ -1,0 +1,7 @@
+#!/bin/sh
+# generete CDPATH
+
+echo '$HOME' \
+$(cd && ls -d */ | sed -e 's@^@$HONE/@g' -e 's@$@@') \
+.. \
+| tr ' ' ':'
