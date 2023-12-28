@@ -1,0 +1,5 @@
+#!/bin/bash
+# find $HOME -print > $HOME/.ALLFILES
+# before run this command, run "find $HOME -print > $HOME/.ALLFILES"
+# make file index and search file with grep
+grep "$@" $HOME/.ALLFILES
