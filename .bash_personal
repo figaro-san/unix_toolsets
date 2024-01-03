@@ -38,9 +38,11 @@ echo "Welcome to Linux, friend!"
 
 # edt
 EDITOR="nvim"
+VISUAL="nvim"
 edt() {
 	case "$1" in
 		astro)
+			cd ~/.config/nvim/lua/user/
 			$EDITOR ~/.config/nvim//lua/user/
 			;;
 
