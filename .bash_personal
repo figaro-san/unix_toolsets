@@ -34,7 +34,7 @@ eval "$(zoxide init bash)"
 #set -o vi
 
 # welcome message
-# echo "Welcome to Linux, friend!"
+echo "Welcome to Linux, friend!"
 
 # edt
 EDITOR="nvim"
