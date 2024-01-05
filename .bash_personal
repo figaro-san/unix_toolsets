@@ -31,7 +31,7 @@ eval $(thefuck --alias)
 eval "$(zoxide init bash)"
 
 # setting for sheloption
-set -o vi
+#set -o vi
 
 # welcome message
 echo "Welcome to Linux, friend!"
