@@ -25,6 +25,7 @@ alias dirs='dirs -v' #番号をつけて、かつ列で表示
 alias slurp='pushd - && pushd' #pushdではなくcdしてしまったとき、slurpで読み込み直す
 alias lg='lazygit'
 alias kp='keepassxc &'
+alias n='nvim'
 
 # setting for fuck command
 eval $(thefuck --alias)
