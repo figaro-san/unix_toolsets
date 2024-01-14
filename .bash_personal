@@ -15,7 +15,7 @@ export PATH=$PATH:$HOME/Projects/Git_workspace/unix_toolsets
 export CDPATH=$HOME:$HOME/Projects/:$HOME/Projects/Git_workspace/:$HOME/Projects/Bookshelf/
 
 # alias settings
-alias up='cd ../'
+# alias up='cd ../'
 alias down='sudo shutdown -h now'
 alias c='clear'
 alias suspend='systemctl suspend'
