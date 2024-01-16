@@ -26,6 +26,7 @@ alias slurp='pushd - && pushd' #pushdではなくcdしてしまったとき、sl
 alias lg='lazygit'
 alias kp='keepassxc &'
 alias n='nvim'
+alias vb='virtualbox &'
 
 # setting for fuck command
 eval $(thefuck --alias)
