@@ -1,3 +1,3 @@
 debi : debi.c
-	gcc -o debi debi.c -lm
+	gcc -o debi debi.c -lm -g
 
