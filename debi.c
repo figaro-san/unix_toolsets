@@ -1,77 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <math.h>
-#include <string.h>
-
-//Hackコンピュータが16bitコンピュータのため 0 から ((2^16)-1) までを考えられれば今は良い
-int BIT = 16;
-
-void exit_with_msg(char *msg) 
-{
-        fprintf(stderr, "%s\n", msg);
-        exit(1);
-}
-
-//ec = error checked
-unsigned long ec_strtoul(char *argv, int base) {
-                 char *end;
-        unsigned long input = strtoul(argv, &end, base);
-
-        if (*end != '\0') 
-                exit_with_msg("[!] Error: Non numeric charcter detected");
-        
-        return input;
-}
-
-bool is_over_or_under_flowing(int min, unsigned long max, unsigned long input) 
-{
-        if (input < min || max < input)
-                return 1;
-        else 
-                return 0;
-}
 
 void print_usage()
 {
         printf("usage:\n");
-        printf("        [+] debi <decimal number> <option>\n");
-        printf("available option: -r\n");
+        printf("        [+] debi <decimal number>\n");
 }
 
-int main(int argc, char *argv[]) 
+void print_as_bit(int decimal) 
 {
-        if (argv[1] == NULL) {
-                print_usage();
-                return 0;
-        }
-        unsigned long input_decimal = ec_strtoul(argv[1], 10);
+	// decimal = 8だとすると; log2(8)+1 = 3+1 = 4(bitで表す際の必要桁数)
+	int bit_digit = log2(decimal) + 1;
+	int *ans_bit = malloc(sizeof(int) * bit_digit);
 
-        bool enable_readable_mode = false;
-        if (argv[2] != NULL && strncmp(argv[2], "-r", 2) == 0) {
-                enable_readable_mode = true;
-        }
+	int cnt = 0;
+	while (decimal != 0) {
+		ans_bit[cnt] = decimal%2;
+		decimal /= 2;
+		cnt++;
+	}
 
-        int min = 0;
-        unsigned long max = pow(2, BIT) -  1;
-        if (is_over_or_under_flowing(min, max, input_decimal))
-                exit_with_msg("[!] Error: Input range is: min = 0, max = (2^BIT)-1");
+	for(int i = bit_digit-1; i >= 0; i--) {
+		printf("%d", ans_bit[i]);
+	}
+	puts("");
+}
 
-         int index = 0;
-        bool output_binary[BIT];
-        for (index = 0; index < BIT; index++)
-                output_binary[index] = 0;
+int main(int argc, char *argv[])
+{	
+	if (argc != 2) {
+		fprintf(stderr, "Invalid arguments\n");
+		return 1;
+	}
+	int decimal = atoi(argv[1]);
 
-        for (index = 0; input_decimal != 0; index++, input_decimal /= 2){
-                output_binary[index] = input_decimal % 2;
-        }
+	print_as_bit(decimal);
 
-        for(index = BIT-1; index >= 0; index--) {
-                printf("%d", output_binary[index]);
-                if (enable_readable_mode && index % 4 == 0)
-                        printf(" ");
-        }
-        puts("");
-
-        return 0;
+	return 0;
 }
