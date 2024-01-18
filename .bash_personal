@@ -27,6 +27,7 @@ alias lg='lazygit'
 alias kp='keepassxc &'
 alias n='nvim'
 alias vb='virtualbox &'
+alias r='ranger'
 
 # setting for fuck command
 eval $(thefuck --alias)
@@ -49,7 +50,9 @@ edt() {
 			cd ~/.config/nvim/lua/user/
 			$EDITOR ~/.config/nvim//lua/user/
 			;;
-
+		ranger)
+			$EDITOR ~/.config/ranger/rc.conf
+			;;
 		i3)
 			$EDITOR ~/.config/i3/config
 			;;
@@ -67,7 +70,7 @@ edt() {
 	esac
 }
 
-complete -W "astro i3 bashrc picom bash_personal" edt
+complete -W "astro i3 bashrc picom bash_personal ranger" edt
 
 # modify bash pronpt
 # export PS1="[\u@\h \W]\$ "
