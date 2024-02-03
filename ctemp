@@ -1,0 +1,7 @@
+#!/bin/bash
+target_file=$1
+echo '#include <stdio.h>' >> $target_file
+echo '' >> $target_file
+echo 'int main() {' >> $target_file
+echo '	' >> $target_file
+echo '}' >> $target_file

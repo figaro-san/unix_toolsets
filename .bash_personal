@@ -12,7 +12,7 @@
 export PATH=$PATH:$HOME/Projects/Git_workspace/unix_toolsets
 
 # add some path to CDPATH
-export CDPATH=$HOME:$HOME/Projects/:$HOME/Projects/Git_workspace/:$HOME/Projects/Bookshelf/
+CDPATH=$HOME:$HOME/Projects/:$HOME/Projects/Git_workspace/:$HOME/Projects/Bookshelf/
 
 # alias settings
 # alias up='cd ../'

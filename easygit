@@ -1,0 +1,10 @@
+#!/bin/bash
+
+target=$1
+git add $target
+
+cmsg=$2
+git commit -m "$cmsg"
+
+#passwd=$3
+echo '\*$E,Vn%t9Mf_~a"Sr]A' | git push
