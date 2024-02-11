@@ -28,6 +28,7 @@ alias kp='keepassxc &'
 alias n='nvim'
 alias vb='virtualbox &'
 alias r='ranger'
+alias ida='$HOME/Projects/Softwares/gui_tools/idafree-8.3/ida64'
 
 # setting for fuck command
 eval $(thefuck --alias)
