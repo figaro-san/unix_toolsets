@@ -12,11 +12,11 @@
 export PATH=$PATH:$HOME/Projects/Git_workspace/unix_toolsets
 
 # add some path to CDPATH
-CDPATH=$HOME:$HOME/Projects/:$HOME/Projects/Git_workspace/:$HOME/Projects/Bookshelf/
+CDPATH=$HOME:$HOME/Projects/:$HOME/Projects/Git_workspace/:$HOME/Projects/BookShelf/
 
 # alias settings
 # alias up='cd ../'
-alias down='sudo shutdown -h now'
+alias down='gfl && sudo shutdown -h now'
 alias c='clear'
 alias suspend='systemctl suspend'
 alias hibernate='sudo systemctl hibernate'
@@ -31,7 +31,7 @@ alias r='ranger'
 alias ida='$HOME/Projects/Softwares/gui_tools/idafree-8.3/ida64'
 
 # setting for fuck command
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # setting for zoxide command
 eval "$(zoxide init bash)"
@@ -48,8 +48,7 @@ VISUAL="nvim"
 edt() {
 	case "$1" in
 		astro)
-			cd ~/.config/nvim/lua/user/
-			$EDITOR ~/.config/nvim//lua/user/
+			$EDITOR ~/.config/nvim/
 			;;
 		ranger)
 			$EDITOR ~/.config/ranger/rc.conf
@@ -66,12 +65,15 @@ edt() {
 		bash_personal)
 			$EDITOR ~/Projects/Git_workspace/unix_toolsets/.bash_personal
 			;;
+		rlog)
+			$EDITOR ~/Projects/BookShelf/rlog/rlog.txt
+			;;
 		*)
 			echo "edt: unknown keyword '$1'"
 	esac
 }
 
-complete -W "astro i3 bashrc picom bash_personal ranger" edt
+complete -W "astro i3 bashrc picom bash_personal ranger rlog" edt
 
 # modify bash pronpt
 # export PS1="[\u@\h \W]\$ "
