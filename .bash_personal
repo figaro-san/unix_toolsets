@@ -16,7 +16,7 @@ CDPATH=$HOME:$HOME/Projects/:$HOME/Projects/Git_workspace/:$HOME/Projects/BookSh
 
 # alias settings
 # alias up='cd ../'
-alias down='gfl && sudo shutdown -h now'
+alias down='gfl ; sudo shutdown -h now'
 alias c='clear'
 alias suspend='systemctl suspend'
 alias hibernate='sudo systemctl hibernate'
@@ -78,3 +78,7 @@ complete -W "astro i3 bashrc picom bash_personal ranger rlog" edt
 # modify bash pronpt
 # export PS1="[\u@\h \W]\$ "
 # export PS1="[<\u> <\t> \W]\$ "
+
+# 応急処置
+# cd $HOME
+export DOCKER_BUILDKIT=1

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# これはxfce4-terminalが謎に起動されていた時に使用した、偽のターミナル。
+# xfce4-terminalを起動した親をログに残すもの
+
+parent_pid=$(ps -o ppid= -p $$)
+parent_cmd=$(ps -o comm= -p $parent_pid)
+curr_user=$(whoami)
+log_file="$HOME/term.log"
+echo "parent_pid $parent_pid, parend_cmd $parent_cmd" >> $log_file

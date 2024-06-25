@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ ! -e "$1" ]; then
+	echo "[+] Error : file does not exists"
+	exit 1
+fi
+
+opcodes=$(objdump -M intel -d $1 | grep '^ ' | cut -f2 | perl -pe 's/(\w{2})\s+/\\x\1/g')
+oplen=$(echo -n "$opcodes" | grep -o '\\x' | wc -l)
+
+echo "opcodes : $opcodes"
+echo "length  : $oplen"
