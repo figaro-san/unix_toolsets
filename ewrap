@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# emacsをコマンドラインから起動し、終了後に同じターミナルに戻ってくるためだけのラッパー
+
+saved_path=$(pwd)
+
+shellpid=$PPID
+echo $shellpid
+kill -9 $shellpid # sigtermだとbashは受け付けない
+
+prog="emacs"
+$prog &
+epid=$(pgrep -n $prog)
+
+while ps -p $epid > /dev/null;
+do
+  :
+done
+
+xfce4-terminal
+cd $saved_path

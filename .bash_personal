@@ -9,38 +9,39 @@
 [ -n "$DISPLAY" ] && export BROWSER=brave || export BROWSER=links
 
 # add unix_toolsets to PATH
-export PATH=$PATH:$HOME/Projects/Git_workspace/unix_toolsets
+export PATH=$PATH:$HOME/Projects/Git_workspace/unix_toolsets:/home/figaro/.local/share/gem/ruby/3.2.0/bin:/home/figaro/.local/bin
 
 # add some path to CDPATH
 CDPATH=$HOME:$HOME/Projects/:$HOME/Projects/Git_workspace/:$HOME/Projects/BookShelf/
 
 # alias settings
 # alias up='cd ../'
-alias down='gfl ; sudo shutdown -h now'
+alias down='sudo shutdown -h now'
 alias c='clear'
 alias suspend='systemctl suspend'
 alias hibernate='sudo systemctl hibernate'
-alias e='eza -1'
-alias dirs='dirs -v' #番号をつけて、かつ列で表示
-alias slurp='pushd - && pushd' #pushdではなくcdしてしまったとき、slurpで読み込み直す
-alias lg='lazygit'
+# alias dirs='dirs -v' #番号をつけて、かつ列で表示
+# alias slurp='pushd - && pushd' #pushdではなくcdしてしまったとき、slurpで読み込み直す
+# alias lg='lazygit'
 alias kp='keepassxc &'
 alias n='nvim'
 alias vb='virtualbox &'
 alias r='ranger'
-alias ida='$HOME/Projects/Softwares/gui_tools/idafree-8.3/ida64'
+# alias ida='$HOME/Projects/Softwares/gui_tools/idafree-8.3/ida64'
+alias e='ewrap&' #emacsのラッパーをバックグラウンドで動かす
+alias emacs='e'
 
 # setting for fuck command
 # eval $(thefuck --alias)
 
 # setting for zoxide command
-eval "$(zoxide init bash)"
+# eval "$(zoxide init bash)"
 
 # setting for sheloption
 #set -o vi
 
 # welcome message
-echo "Welcome to Linux, friend!"
+# echo "Welcome to Linux, friend!"
 
 # edt
 EDITOR="nvim"

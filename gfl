@@ -1,4 +1,0 @@
-#!/bin/bash
-# search and get all filenames under $HOME
-# and save it to ALLFILES
-find $HOME -print > $HOME/.ALLFILES

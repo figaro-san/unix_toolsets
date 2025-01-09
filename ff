@@ -1,5 +1,0 @@
-#!/bin/bash
-# gfl = (find $HOME -print > $HOME/.ALLFILES)
-# before run this command, run gfl
-# make file index and search file with grep
-grep "$@" $HOME/.ALLFILES

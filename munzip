@@ -1,0 +1,17 @@
+#!/bin/sh
+
+zipfile="$1"
+
+if [ -z "$zipfile" ]; then
+	echo "Usage: munzip <zipfile>"
+	exit 1
+fi
+
+if [ ! -f "$zipfile" ]; then
+	echo "File '$zipfile' does not exists"
+	exit 1
+fi
+
+dirname="${zipfile%.zip}"
+
+unzip "$zipfile" -d "$dirname"
